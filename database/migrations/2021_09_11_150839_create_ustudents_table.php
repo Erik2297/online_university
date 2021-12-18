@@ -17,6 +17,8 @@ class CreateUstudentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('surname');
+            $table->dateTime('born');
+            $table->string('gender');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('avatar');
@@ -25,11 +27,10 @@ class CreateUstudentsTable extends Migration
             $table->bigInteger('group_id')->unsigned();
             $table->foreign('group_id')->references('id')->on('ugroups')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->string('role_in_group');
-            $table->string('active_status');
+            $table->string('role_in_group')->default('student');
+            $table->string('active_status')->default('false');
             $table->string('paused')->default('false');
-            $table->dateTime('born');
-            $table->year('entered_the_university');
+            $table->string('entered_the_university')->nullable();
             $table->timestamps();
         });
     }
