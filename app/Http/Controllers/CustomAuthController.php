@@ -61,7 +61,7 @@ class CustomAuthController extends Controller
             $user->group_id = $data['group_id'];
             $user->email = $data['email'];
             $gender_avatar = $user->gender == 'male' ? 'm' : 'w' ;
-            $user->avatar = 'images/default_avatars'.$gender_avatar.rand(1,4).'.png';
+            $user->avatar = 'images/default_avatars/'.$gender_avatar.rand(1,4).'.png';
             $user->password = Hash::make($data['password']);
             $user->email_verified_at = Carbon::now();
             $user->save();
@@ -127,13 +127,12 @@ class CustomAuthController extends Controller
 
     public function Logout(){
         Auth::logout();
-        return redirect('/');
+        return response()->json(['ok'=>'ok']);
     }
 
 
     public function  Userget() {
         $data = Auth::user();
-        dd($data);
         return response()->json();
     }
 

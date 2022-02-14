@@ -23,6 +23,7 @@ import Forum from './components/Forum.vue';
 import About from './components/About.vue';
 import NotFound from './components/NotFound.vue';
 import Profile from './components/Profile.vue';
+import Dasacucak from './components/Dasacucak.vue';
 
 // ROUTES
 const routes = [
@@ -32,6 +33,8 @@ const routes = [
     { path: '/forum', component: Forum },
     { path: '/about', component: About },
     { path: '/profile', component: Profile },
+    { path: '/dasacucak', component: Dasacucak },
+
 
     // IF ROUTE DOES NOT EXISTS
     { path: '/404', component: NotFound },

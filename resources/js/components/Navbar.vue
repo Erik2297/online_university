@@ -14,10 +14,10 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#header">ԳԼԽԱՎՈՐ <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="/">ԳԼԽԱՎՈՐ <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#intro">ՆԱԽԱԲԱՆ</a>
+                    <li v-if="!logInOutIcons" class="nav-item">
+                        <a class="nav-link page-scroll" href="/profile">ՊՐՈՖԻԼ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#services">ՖՈՐՈՒՄ</a>
@@ -25,27 +25,29 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#callMe">ՆՈՐՈՒԹՅՈՒՆՆԵՐ</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link page-scroll" href="#projects">PROJECTS</a>
-                    </li>
+                    </li> -->
 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">DROPDOWN</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
                             <div class="dropdown-items-divide-hr"></div>
                             <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
                         </div>
-                    </li>
+                    </li> -->
 
                 </ul>
-                <span class="nav-item social-icons">
+                <span v-if="logInOutIcons" class="nav-item social-icons text-light">
+                        Մուտք
                     <span class="fa-stack">
                         <a data-toggle="modal" data-target="#loginModal" title="sign-in" class="login-modal-icon">
                             <span class="hexagon"></span>
                             <i class="fas fa-sign-in-alt fa-stack-1x"></i>
                         </a>
                     </span>
+                        Գրանցում
                     <span class="fa-stack">
                         <a data-toggle="modal" data-target="#registerModal" title="sign-up" class="register-modal-icon">
                             <span class="hexagon"></span>
@@ -53,6 +55,23 @@
                         </a>
                     </span>
                 </span>
+                <span v-else class="nav-item social-icons text-light">
+                    Ելք
+                    <span class="fa-stack">
+                        <a @click="Logout()">
+                            <span class="hexagon"></span>
+                            <i class="fas fa-sign-out-alt fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    Կարգավորումներ
+                    <span class="fa-stack">
+                        <a>
+                            <span class="hexagon"></span>
+                            <i class="fas fa-gear fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+
             </div>
         </nav>
         <Login />
@@ -71,7 +90,25 @@ export default {
     },
     data(){
         return{
-
+            logInOutIcons: true
+        }
+    },
+    mounted(){
+        setInterval(()=>{
+            if (localStorage.getItem("user") != null) {
+                this.logInOutIcons = false
+                console.log(this.logInOutIcons)
+            }
+        },500)
+    },
+    methods:{
+        Logout(){
+            axios.post('api/logout').then( res => {
+                if(res.data.hasOwnProperty('ok')){
+                    delete localStorage.user
+                    location.replace('/')
+                }
+            })
         }
     }
 }
