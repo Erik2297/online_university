@@ -99,14 +99,14 @@ export default {
         setInterval(()=>{
             if (localStorage.getItem("user") != null) {
                 this.logInOutIcons = false
-                // if (localStorage.getItem("user")) {
-                //     let user = JSON.parse(localStorage.getItem("user"))
-                //     // console.log(user)
-                //     console.log(localStorage.getItem("user"));
-                //     // if( 'science_degree' in user){
-                //     //     this.lecturer = true
-                //     // }
-                // }
+                if (localStorage.getItem("user")) {
+                    let user = JSON.parse(localStorage.getItem("user"))
+                    // console.log(user)
+                    console.log(localStorage.getItem("user"));
+                    if( 'science_degree' in user){
+                        this.lecturer = true
+                    }
+                }
             }
         },500)
     },
@@ -147,7 +147,7 @@ export default {
 .nav-links, .logo-header {
     text-shadow: 0 1px 3px #113448;
 }
-.fa-sign-in-alt::before , .fa-user-plus::before{
+.fa-sign-in-alt::before , .fa-sign-out-alt::before ,  .fa-user-plus::before , .fa-gear::before {
     margin-left: -7px;
 }
 
