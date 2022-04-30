@@ -14,13 +14,13 @@
                 <div class="media clearfix align-items-center">
                 <div class="media-left pr30 user-image-section">
                     <a href="#">
-                        <img class="media-object mw150" :src="'http://127.0.0.1:8000/'+user.avatar" alt="..." style="width:200px;">
+                        <img class="media-object mw150" :src="user.avatar" alt="..." style="width:200px;">
                     </a>
                     <img v-if="user.role_in_group == 'leader'" :src="'/images/lead3.png'" width="60" class="lead-badge" title="Խմբի ավագ" alt="Խմբի ավագ">
                 </div>
                 <div class="media-body va-m pl-2">
                     <h2 class="media-heading">
-                        {{ user.name }} LECTURER
+                        {{ user.name }}
                     </h2>
                     <p class="lead">
                         {{ user.surname }}
@@ -29,17 +29,17 @@
                         <ul class="list-inline list-unstyled d-flex justify-content-start">
                             <li class="ml-2 mr-2">
                                 <a href="#" title="facebook-link">
-                                    <span class="fa fa-facebook-square fs35 text-primary"></span>
+                                    <i class="fab fa-facebook-square fs35 text-primary"></i>
                                 </a>
                             </li>
                             <li class="ml-2 mr-2">
                                 <a href="#" title="twitter-link">
-                                    <span class="fa fa-twitter-square fs35 text-info"></span>
+                                    <i class="fab fa-twitter-square fs35 text-info"></i>
                                 </a>
                             </li>
                             <li class="ml-2 mr-2">
                                 <a href="#" title="gmail-link link">
-                                    <img :src="'images/gmail.png'" width="36" height="32" />
+                                    <img :src="'/images/gmail.png'" width="38" height="35.56" style="margin-top: -1px" />
                                 </a>
                             </li>
                         </ul>
@@ -65,7 +65,7 @@
                                 <i class="fa fa-calendar text-danger"></i>
                             </td>
                             <td style="cursor:ponter">
-                                <a class="text-dark" style="text-decoration: none;" href="/dasacucak">Դասացուցակ</a>
+                                <a class="text-dark" style="text-decoration: none;" href="/lecturer/dasacucak">Դասացուցակ</a>
                             </td>
                         </tr>
                         <tr>
@@ -73,15 +73,15 @@
                                 <i class="fas fa-users text-primary"></i>
                             </td>
                             <td style="cursor:ponter">
-                                <a class="text-dark" style="text-decoration: none;" href="/mygroup">Իմ Խումբը</a>
+                                <a class="text-dark" style="text-decoration: none;" href="/lecturer/mygroup">Իմ Խմբերը</a>
                             </td>
                         </tr>
                         <tr>
                             <td style="cursor:ponter">
-                                <i class="fas fa-book-open text-success"></i>
+                                <i class="fas fa-school text-success"></i>
                             </td>
                             <td style="cursor:ponter">
-                                <a class="text-dark" style="text-decoration: none;" href="/zachot">Ստուգարքային գրքույկ</a>
+                                <a class="text-dark" style="text-decoration: none;" href="/lecturer/ambion">Ամբիոն</a>
                             </td>
                         </tr>
                         <tr>
@@ -227,7 +227,7 @@ export default {
         }, 500);
         $('#loginModal').modal('hide')
 
-        axios.get('api/userget').then( res =>  {
+        axios.get('/api/userget').then( res =>  {
             this.user = res.data
             localStorage.user = JSON.stringify(res.data)
         })

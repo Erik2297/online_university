@@ -8,6 +8,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Vuex from 'vuex'
+import store from './store'
 
 axios.defaults.headers.common['content-type'] = 'application/json;charset=UTF-8'
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
@@ -15,6 +17,7 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
 Vue.use(require('vue-moment'));
+Vue.use(Vuex);
 
 // MAIN COMPONENT
 import App from './components/App.vue';
@@ -47,7 +50,7 @@ const routes = [
     { path: '/mygroup', component: MyGroup },
 
     // LECTURER ROUTES
-    { path: '/profileLectuer', component: LecturerProfile },
+    { path: '/lecturerprofile', component: LecturerProfile },
 
 
     // IF ROUTE DOES NOT EXISTS
@@ -71,5 +74,6 @@ router.mode = 'html5'
 const app = new Vue({
     el: '#app',
   	router,
-    render: h => h(App)
+    store,
+    render: h => h(App),
 });

@@ -17,7 +17,8 @@
                         <a class="nav-link nav-links page-scroll" href="/">ԳԼԽԱՎՈՐ <span class="sr-only">(current)</span></a>
                     </li>
                     <li v-if="!logInOutIcons" class="nav-item">
-                        <a class="nav-link nav-links page-scroll" href="/profile">ՊՐՈՖԻԼ</a>
+                        <a v-if="!lecturer" class="nav-link nav-links page-scroll" href="/profile">ՊՐՈՖԻԼ</a>
+                        <a v-else class="nav-link nav-links page-scroll" href="/lecturerprofile">ՊՐՈՖԻԼ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-links page-scroll" href="/forum">ՖՈՐՈՒՄ</a>
@@ -42,7 +43,7 @@
                 <span v-if="logInOutIcons" class="nav-item social-icons text-light nav-links">
                         Մուտք
                     <span class="fa-stack">
-                        <a data-toggle="modal" data-target="#loginModal" title="sign-in" class="login-modal-icon">
+                        <a data-toggle="modal" data-target="#loginModal" title="sign-in" class="login-modal-icon justify-content-center">
                             <span class="hexagon"></span>
                             <i class="fas fa-sign-in-alt fa-stack-1x"></i>
                         </a>
@@ -90,19 +91,28 @@ export default {
     },
     data(){
         return{
-            logInOutIcons: true
+            logInOutIcons: true,
+            lecturer: false
         }
     },
     mounted(){
         setInterval(()=>{
             if (localStorage.getItem("user") != null) {
                 this.logInOutIcons = false
+                // if (localStorage.getItem("user")) {
+                //     let user = JSON.parse(localStorage.getItem("user"))
+                //     // console.log(user)
+                //     console.log(localStorage.getItem("user"));
+                //     // if( 'science_degree' in user){
+                //     //     this.lecturer = true
+                //     // }
+                // }
             }
         },500)
     },
     methods:{
         Logout(){
-            axios.post('api/logout').then( res => {
+            axios.post('/api/logout').then( res => {
                 if(res.data.hasOwnProperty('ok')){
                     delete localStorage.user
                     location.replace('/')
@@ -136,6 +146,9 @@ export default {
 }
 .nav-links, .logo-header {
     text-shadow: 0 1px 3px #113448;
+}
+.fa-sign-in-alt::before , .fa-user-plus::before{
+    margin-left: -7px;
 }
 
 </style>
