@@ -685,6 +685,7 @@ input[type='checkbox'] {
 .navbar-custom .nav-item .nav-link:hover,
 .navbar-custom .nav-item .nav-link.active {
 	color: #14bf98;
+    text-shadow: 0 1px 3px #14bf9855;
 }
 
 /* Dropdown Menu */

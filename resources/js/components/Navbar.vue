@@ -14,23 +14,23 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/">ԳԼԽԱՎՈՐ <span class="sr-only">(current)</span></a>
+                        <a class="nav-link nav-links page-scroll" href="/">ԳԼԽԱՎՈՐ <span class="sr-only">(current)</span></a>
                     </li>
                     <li v-if="!logInOutIcons" class="nav-item">
-                        <a class="nav-link page-scroll" href="/profile">ՊՐՈՖԻԼ</a>
+                        <a class="nav-link nav-links page-scroll" href="/profile">ՊՐՈՖԻԼ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#services">ՖՈՐՈՒՄ</a>
+                        <a class="nav-link nav-links page-scroll" href="/forum">ՖՈՐՈՒՄ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#callMe">ՆՈՐՈՒԹՅՈՒՆՆԵՐ</a>
+                        <a class="nav-link nav-links page-scroll" href="/news">ՆՈՐՈՒԹՅՈՒՆՆԵՐ</a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#projects">PROJECTS</a>
+                        <a class="nav-link nav-links page-scroll" href="#projects">PROJECTS</a>
                     </li> -->
 
                     <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">DROPDOWN</a>
+                        <a class="nav-link nav-links dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">DROPDOWN</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
                             <div class="dropdown-items-divide-hr"></div>
@@ -39,7 +39,7 @@
                     </li> -->
 
                 </ul>
-                <span v-if="logInOutIcons" class="nav-item social-icons text-light">
+                <span v-if="logInOutIcons" class="nav-item social-icons text-light nav-links">
                         Մուտք
                     <span class="fa-stack">
                         <a data-toggle="modal" data-target="#loginModal" title="sign-in" class="login-modal-icon">
@@ -55,19 +55,19 @@
                         </a>
                     </span>
                 </span>
-                <span v-else class="nav-item social-icons text-light">
-                    Ելք
+                <span v-else class="nav-item social-icons text-light nav-links">
+                    <!-- Ելք -->
                     <span class="fa-stack">
                         <a @click="Logout()">
                             <span class="hexagon"></span>
-                            <i class="fas fa-sign-out-alt fa-stack-1x"></i>
+                            <i class="fas fa-sign-out-alt fa-stack-1x" title="Ելք"></i>
                         </a>
                     </span>
-                    Կարգավորումներ
+                    <!-- Կարգավորումներ -->
                     <span class="fa-stack">
                         <a>
                             <span class="hexagon"></span>
-                            <i class="fas fa-gear fa-stack-1x"></i>
+                            <i class="fas fa-gear fa-stack-1x" title="Կարգավորումներ"></i>
                         </a>
                     </span>
                 </span>
@@ -97,7 +97,6 @@ export default {
         setInterval(()=>{
             if (localStorage.getItem("user") != null) {
                 this.logInOutIcons = false
-                console.log(this.logInOutIcons)
             }
         },500)
     },
@@ -134,6 +133,9 @@ export default {
 }
 .signup-section {
     padding: 0.3rem 0rem;
+}
+.nav-links, .logo-header {
+    text-shadow: 0 1px 3px #113448;
 }
 
 </style>

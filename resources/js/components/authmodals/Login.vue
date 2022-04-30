@@ -11,7 +11,11 @@
                     <div class="form-title text-center">
                         <h4>Լրացրեք տվյալները մուտք գործելու համար</h4>
                     </div>
-                    <div class="d-flex flex-column text-center p-4">
+                    <div class="d-flex flex-column text-center pb-4 pr-4 pl-4">
+                        <div class="d-flex justify-content-start aligh-items-center">
+                            <input type="checkbox" id="dasaxos" class="mt-1" v-model="regData.lecturer">
+                            <label for="dasaxos" style="user-select:none !important"> Մուտք գործել որպես դասախոս </label>
+                        </div>
                         <form>
                             <div class="form-group">
                                 <label class="errors-texts" for="email">{{ regError.email }} <span style="color:#0000">.</span> </label>
@@ -36,12 +40,14 @@ export default {
         return{
             regData:{
                 email:'',
-                password:''
+                password:'',
+                lecturer: false
             },
             regError:{
                 email:'',
                 password:'',
             },
+            user: {}
         }
     },
     methods:{
@@ -50,9 +56,7 @@ export default {
             axios
             .post('api/login/'+data)
             .then( response => {
-                console.log(response)
                 if(response.data.hasOwnProperty('errors')){
-                    console.log('error exists')
                     this.regError.email = response.data.errors
                 }
                 else{
@@ -60,10 +64,22 @@ export default {
                         this.regError[item] = ''
                     }
                     document.querySelector('.close-reg').click()
-                    this.$router.push('/profile')
+                    axios.get('api/userget').then( res =>  {
+                        this.user = res.data
+                        localStorage.user = JSON.stringify(res.data)
+                    })
+                    if( 'science_degree' in this.user)
+                        this.$router.push('/profileLectuer')
+                    else
+                        this.$router.push('/profile')
                 }
             });
         },
+    },
+    watch: {
+        'regData.lecturer'(val){
+            console.log(val);
+        }
     }
 }
 </script>

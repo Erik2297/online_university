@@ -24,6 +24,7 @@ class CreateUlecturersTable extends Migration
             $table->string('role_in_university');
             $table->string('science_degree');
             $table->dateTime('born');
+            $table->string('gender');
             $table->year('entered_the_university');
             $table->timestamps();
         });

@@ -102,7 +102,7 @@
 
 
         <!-- Services -->
-        <div id="services" class="cards-2">
+        <!-- <div id="services" class="cards-2">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -134,7 +134,7 @@
                             </div>
                             <div class="button-container">
                                 <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
-                            </div> <!-- end of button-container -->
+                            </div>
                         </div>
 
 
@@ -159,7 +159,7 @@
                             </div>
                             <div class="button-container">
                                 <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
-                            </div> <!-- end of button-container -->
+                            </div>
                         </div>
 
 
@@ -184,14 +184,14 @@
                             </div>
                             <div class="button-container">
                                 <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
-                            </div> <!-- end of button-container -->
+                            </div>
                         </div>
 
 
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- end of services -->
 
 
@@ -377,14 +377,6 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <!-- Filter -->
-                        <div class="button-group filters-button-group">
-                            <a class="button is-checked" data-filter="*"><span>SHOW ALL</span></a>
-                            <a class="button" data-filter=".design"><span>DESIGN</span></a>
-                            <a class="button" data-filter=".development"><span>DEVELOPMENT</span></a>
-                            <a class="button" data-filter=".marketing"><span>MARKETING</span></a>
-                            <a class="button" data-filter=".seo"><span>SEO</span></a>
-                        </div> <!-- end of button group -->
                         <div class="grid">
                             <div class="element-item development">
                                 <a class="popup-with-move-anim" href="#project-1"><div class="element-item-overlay"><span>Online Banking</span></div><img src="images/project-1.jpg" alt="alternative"></a>

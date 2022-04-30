@@ -23,6 +23,7 @@
         {{-- STYLES --}}
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
         <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('css/fontawesome-all.css')}}" rel="stylesheet">
         <link href="{{asset('css/swiper.css')}}" rel="stylesheet">

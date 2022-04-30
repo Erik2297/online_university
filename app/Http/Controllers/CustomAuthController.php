@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\EmailConfirmation;
 use App\Models\Ustudent;
 use App\Models\Ugroup;
+use App\Models\Ulecturer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,7 +62,7 @@ class CustomAuthController extends Controller
             $user->group_id = $data['group_id'];
             $user->email = $data['email'];
             $gender_avatar = $user->gender == 'male' ? 'm' : 'w' ;
-            $user->avatar = 'images/default_avatars/'.$gender_avatar.rand(1,4).'.png';
+            $user->avatar = 'images/default_avatars/'.$gender_avatar.rand(1,6).'.png';
             $user->password = Hash::make($data['password']);
             $user->email_verified_at = Carbon::now();
             $user->save();
@@ -92,10 +93,11 @@ class CustomAuthController extends Controller
 
     public function Login( $data ){
         $data = json_decode($data,true);
+        $table = $data['lecturer'] ? 'ulecturers' : 'ustudents';
         $validate = validator()->make(
             $data,
             [
-                'email' => 'required|email|exists:ustudents',
+                'email' => 'required|email|exists:'.$table,
                 'password' => 'required',
             ]
         );
@@ -106,20 +108,28 @@ class CustomAuthController extends Controller
             ]);
         }
         else{
-            $user = Ustudent::where('email', $data['email'])->first();
-            if( Auth::attempt(['email' => $data['email'],'password' => $data['password']] )) {
-                // dd(Auth::user());
-                // return response()->json([
-                //     'status' => '200',
-                //     'message' => 'loggedin'
-                // ]);
-                return response()->json(Auth::user(), 200);
+            $user = $data['lecturer'] ? Ulecturer::where('email', $data['email'])->first() : Ustudent::where('email', $data['email'])->first();
+            if($data['lecturer']){
+                if( Auth::guard('lecturer')->attempt(['email' => $data['email'],'password' => $data['password']] )) {
+                    return response()->json(Auth::guard('lecturer')->user(), 200);
+                }
+                else{
+                    return response()->json([
+                        'status' => '200',
+                        'errors' => 'Տվյալները սխալ են , փորձեք կրկին !'
+                    ]);
+                }
             }
             else{
-                return response()->json([
-                    'status' => '200',
-                    'errors' => 'Տվյալները սխալ են , փորձեք կրկին !'
-                ]);
+                if( Auth::attempt(['email' => $data['email'],'password' => $data['password']] )) {
+                    return response()->json(Auth::user(), 200);
+                }
+                else{
+                    return response()->json([
+                        'status' => '200',
+                        'errors' => 'Տվյալները սխալ են , փորձեք կրկին !'
+                    ]);
+                }
             }
         }
     }
@@ -127,13 +137,22 @@ class CustomAuthController extends Controller
 
     public function Logout(){
         Auth::logout();
+        Auth::guard('lecturer')->logout();
         return response()->json(['ok'=>'ok']);
     }
 
 
     public function  Userget() {
-        $data = Auth::user();
-        return response()->json();
+        if(Auth::guard('lecturer')->check()){
+            $data = Auth::guard('lecturer')->user();
+            return response()->json($data);
+        }
+        else {
+            $data = Auth::user();
+            return response()->json($data);
+        }
+        // $data = Auth::guard('user')->check();
+        // return response()->json($data);
     }
 
 }

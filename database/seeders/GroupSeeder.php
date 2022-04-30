@@ -16,6 +16,10 @@ class GroupSeeder extends Seeder
     public function run()
     {
         Ugroup::insert([
+            'name' => 'K-82',
+            'faculty_id' => Ufaculty::first('id')->id,
+        ]);
+        Ugroup::insert([
             'name' => 'K-83',
             'faculty_id' => Ufaculty::first('id')->id,
         ]);

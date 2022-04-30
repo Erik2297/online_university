@@ -9,6 +9,9 @@ import VueRouter from 'vue-router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+axios.defaults.headers.common['content-type'] = 'application/json;charset=UTF-8'
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
+
 Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
 Vue.use(require('vue-moment'));
@@ -24,6 +27,12 @@ import About from './components/About.vue';
 import NotFound from './components/NotFound.vue';
 import Profile from './components/Profile.vue';
 import Dasacucak from './components/Dasacucak.vue';
+import News from './components/News.vue';
+import MyGroup from './components/MyGroup.vue';
+
+// LECTURER COMPONENTS
+import LecturerProfile from './components/LecturerProfile.vue';
+
 
 // ROUTES
 const routes = [
@@ -32,8 +41,13 @@ const routes = [
     { path: '/events', component: Events },
     { path: '/forum', component: Forum },
     { path: '/about', component: About },
+    { path: '/news', component: News },
     { path: '/profile', component: Profile },
     { path: '/dasacucak', component: Dasacucak },
+    { path: '/mygroup', component: MyGroup },
+
+    // LECTURER ROUTES
+    { path: '/profileLectuer', component: LecturerProfile },
 
 
     // IF ROUTE DOES NOT EXISTS

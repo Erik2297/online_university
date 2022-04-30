@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         Artisan::call('db:seed --class=FacultySeeder');
         Artisan::call('db:seed --class=GroupSeeder');
         Artisan::call('db:seed --class=StudentSeeder');
+        Artisan::call('db:seed --class=LecturerSeeder');
     }
 }
