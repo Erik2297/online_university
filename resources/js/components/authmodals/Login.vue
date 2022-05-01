@@ -54,7 +54,7 @@ export default {
         Login(){
             const data = JSON.stringify(this.regData)
             axios
-            .post('api/login/'+data)
+            .post('/api/login/'+data)
             .then( response => {
                 if(response.data.hasOwnProperty('errors')){
                     this.regError.email = response.data.errors
@@ -64,10 +64,9 @@ export default {
                         this.regError[item] = ''
                     }
                     document.querySelector('.close-reg').click()
-                    axios.get('api/userget').then( res =>  {
+                    axios.get('/api/userget').then( res =>  {
                         this.user = res.data
                         localStorage.user = JSON.stringify(res.data)
-                        console.log('science_degree' in this.user , this.user)
                         if( 'science_degree' in this.user)
                             this.$router.push('/lecturerprofile')
                         else
@@ -79,7 +78,6 @@ export default {
     },
     watch: {
         'regData.lecturer'(val){
-            console.log(val);
         }
     }
 }

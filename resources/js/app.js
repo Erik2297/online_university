@@ -20,21 +20,29 @@ Vue.use(require('vue-moment'));
 Vue.use(Vuex);
 
 // MAIN COMPONENT
-import App from './components/App.vue';
+import App from './components/App.vue'
 
 // COMPONENTS
-import Home from './components/Home.vue';
-import Events from './components/Events.vue';
-import Forum from './components/Forum.vue';
-import About from './components/About.vue';
-import NotFound from './components/NotFound.vue';
-import Profile from './components/Profile.vue';
-import Dasacucak from './components/Dasacucak.vue';
-import News from './components/News.vue';
-import MyGroup from './components/MyGroup.vue';
+import Home from './components/Home.vue'
+import Events from './components/Events.vue'
+import Forum from './components/Forum.vue'
+import About from './components/About.vue'
+import NotFound from './components/NotFound.vue'
+import Profile from './components/Profile.vue'
+import Dasacucak from './components/Dasacucak.vue'
+import News from './components/News.vue'
+import MyGroup from './components/MyGroup.vue'
+import EditProfile from './components/EditProfile.vue'
+import Zachot from './components/Zachot.vue'
 
 // LECTURER COMPONENTS
-import LecturerProfile from './components/LecturerProfile.vue';
+import LecturerProfile from './components/LecturerProfile.vue'
+import LecturerGroups from './components/LecturerGroups.vue'
+import LecturerSingleGroup from './components/LecturerSingleGroup.vue'
+import LecturerSchedule from './components/LecturerSchedule.vue'
+import LecturerAmbion from './components/LecturerAmbion.vue'
+
+
 
 
 // ROUTES
@@ -48,9 +56,17 @@ const routes = [
     { path: '/profile', component: Profile },
     { path: '/dasacucak', component: Dasacucak },
     { path: '/mygroup', component: MyGroup },
+    { path: '/profile/edit', component: EditProfile },
+    { path: '/zachot', component: Zachot },
 
     // LECTURER ROUTES
     { path: '/lecturerprofile', component: LecturerProfile },
+    { path: '/lecturergroups', component: LecturerGroups },
+    { path: '/group/:id', component: LecturerSingleGroup },
+    { path: '/lecturerschedule', component: LecturerSchedule },
+    { path: '/lecturerambion', component: LecturerAmbion },
+
+
 
 
     // IF ROUTE DOES NOT EXISTS

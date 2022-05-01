@@ -233,7 +233,6 @@ export default {
             this.user = res.data
             localStorage.user = JSON.stringify(res.data)
         })
-        console.log(this.count , 'mapstate ');
     },
     computed: {
         ...mapState([

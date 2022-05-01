@@ -10,7 +10,7 @@
         </div>
 
         <div id="content" class="container">
-            <h3> Իմ Խումբը / {{ group.name }} </h3>
+            <h3 class="pb-4"> Իմ Խումբը / {{ group.name }} </h3>
             <div class="row">
 
                 <div class="container">
@@ -66,14 +66,14 @@ export default {
         }
     },
     mounted(){
-        const group_id = JSON.parse(localStorage.getItem('user')).group_id
-        axios.get(`api/groupmembers/${group_id}`).then( res =>  {
+        const group_id = this.$route.params.id
+        axios.get(`/api/groupmembers/${group_id}`).then( res =>  {
             this.students = res.data
         })
-        axios.get(`api/groupname/${group_id}`).then( res =>  {
+        axios.get(`/api/groupname/${group_id}`).then( res =>  {
             this.group = res.data[0]
         })
-        this.user = JSON.parse(localStorage.getItem('user'))
+        console.log();
     }
 }
 

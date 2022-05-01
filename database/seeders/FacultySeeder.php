@@ -15,7 +15,7 @@ class FacultySeeder extends Seeder
     public function run()
     {
         Ufaculty::insert([
-            'name' => 'Ինֆորմատիկա',
+            'name' => 'Կառավարման և Տեխնոլոգիայի',
         ]);
     }
 }

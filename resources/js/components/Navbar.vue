@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
             <a class="navbar-brand logo-image" href="/">
-                <img src="images/logo2.svg" alt="alternative">
+                <img :src="'/images/logo2.svg'" alt="alternative">
             </a>
             <li style="list-style:none" class="text-light logo-header"> Online University </li>
 
@@ -79,8 +79,22 @@
                                 </span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="/profile/edit">Կարգավորումներ</a>
-                                <a class="dropdown-item" href="#">logout</a>
+                                <a v-if="!lecturer" class="dropdown-item" href="/profile">
+                                    <i class='fa fa-user'></i>
+                                    Պրոֆիլ
+                                </a>
+                                <a v-else class="dropdown-item" href="/lecturerprofile">
+                                    <i class="fa fa-user"></i>
+                                    Պրոֆիլ
+                                </a>
+                                <a class="dropdown-item" href="/profile/edit">
+                                    <i class="fa fa-gear"></i>
+                                    Կարգավորումներ
+                                </a>
+                                <a class="dropdown-item text-light" @click="Logout()">
+                                    Ելք
+                                    <i class="fas fa-sign-out-alt ml-4"></i>
+                                </a>
                             </div>
                         </span>
                     </span>
@@ -114,8 +128,6 @@ export default {
                 this.logInOutIcons = false
                 if (localStorage.getItem("user")) {
                     let user = JSON.parse(localStorage.getItem("user"))
-                    // console.log(user)
-                    console.log(localStorage.getItem("user"));
                     if( 'science_degree' in user){
                         this.lecturer = true
                     }
@@ -160,8 +172,14 @@ export default {
 .nav-links, .logo-header {
     text-shadow: 0 1px 3px #113448;
 }
-.fa-sign-in-alt::before , .fa-sign-out-alt::before ,  .fa-user-plus::before , .fa-gear::before {
+.fa-sign-in-alt::before , .fa-user-plus::before  {
     margin-left: -7px;
 }
+/* .fa-gear::before */
+
+.fa-sign-out-alt::before{
+    margin-left: -4px;
+}
+
 
 </style>

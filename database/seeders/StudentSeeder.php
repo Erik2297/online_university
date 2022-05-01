@@ -19,8 +19,8 @@ class StudentSeeder extends Seeder
             $gender_avatar = $i % 2 == 0 ? 'm' : 'w' ;
             $avatar = 'images/default_avatars/'.$gender_avatar.rand(1,4).'.png';
             Ustudent::insert([
-                'name' => 'Name'.$i,
-                'surname' => 'Surname'.$i,
+                'name' => 'Անուն '.$i,
+                'surname' => 'Ազգանուն '.$i,
                 'born' => '1997-08-23 00:00:00',
                 'gender' => $i % 2 == 0 ? 'male' : 'female',
                 'email' => 'student'.$i.'@gmail.com',
@@ -28,7 +28,7 @@ class StudentSeeder extends Seeder
                 'avatar' => $avatar,
                 'email_verified_at' => '2022-01-28 15:54:52',
                 'group_id' => 1,
-                'role_in_group' => 'student',
+                'role_in_group' => $i == 1 ? 'leader' : 'student',
                 'active_status' => 'true',
                 'paused' => 'false',
             ]);
@@ -37,8 +37,8 @@ class StudentSeeder extends Seeder
             $gender_avatar = $i % 2 == 0 ? 'm' : 'w' ;
             $avatar = 'images/default_avatars/'.$gender_avatar.rand(1,4).'.png';
             Ustudent::insert([
-                'name' => 'Name'.$i,
-                'surname' => 'Surname'.$i,
+                'name' => 'Անուն '.$i,
+                'surname' => 'Ազգանուն '.$i,
                 'born' => '1997-08-23 00:00:00',
                 'gender' => $i % 2 == 0 ? 'male' : 'female',
                 'email' => 'student'.$i.'@gmail.com',
@@ -46,7 +46,7 @@ class StudentSeeder extends Seeder
                 'avatar' => $avatar,
                 'email_verified_at' => '2022-01-28 15:54:52',
                 'group_id' => 2,
-                'role_in_group' => 'student',
+                'role_in_group' => $i == 9 ? 'leader' : 'student',
                 'active_status' => 'true',
                 'paused' => 'false',
             ]);

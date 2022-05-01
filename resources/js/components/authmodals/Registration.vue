@@ -113,7 +113,7 @@ export default {
     },
     mounted(){
         axios
-        .post('api/groups')
+        .post('/api/groups')
         .then( response => {
             this.groups = response.data.groups;
         });
@@ -123,7 +123,7 @@ export default {
             (!this.checkIfDataSelected) ? this.regData.born = '' : '' ;
             const data = JSON.stringify(this.regData)
             axios
-            .post('api/registration/'+data)
+            .post('/api/registration/'+data)
             .then( response => {
                 if(response.data.hasOwnProperty('errors')){
                     for( let item in this.regError ){

@@ -65,7 +65,7 @@
                                 <i class="fa fa-calendar text-danger"></i>
                             </td>
                             <td style="cursor:ponter">
-                                <a class="text-dark" style="text-decoration: none;" href="/lecturer/dasacucak">Դասացուցակ</a>
+                                <a class="text-dark" style="text-decoration: none;" href="/lecturerschedule">Դասացուցակ</a>
                             </td>
                         </tr>
                         <tr>
@@ -73,7 +73,7 @@
                                 <i class="fas fa-users text-primary"></i>
                             </td>
                             <td style="cursor:ponter">
-                                <a class="text-dark" style="text-decoration: none;" href="/lecturer/mygroup">Իմ Խմբերը</a>
+                                <a class="text-dark" style="text-decoration: none;" href="/lecturergroups">Իմ Խմբերը</a>
                             </td>
                         </tr>
                         <tr>
@@ -81,7 +81,7 @@
                                 <i class="fas fa-school text-success"></i>
                             </td>
                             <td style="cursor:ponter">
-                                <a class="text-dark" style="text-decoration: none;" href="/lecturer/ambion">Ամբիոն</a>
+                                <a class="text-dark" style="text-decoration: none;" href="/lecturerambion">Ամբիոն</a>
                             </td>
                         </tr>
                         <tr>
