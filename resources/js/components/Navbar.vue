@@ -65,11 +65,24 @@
                         </a>
                     </span>
                     <!-- Կարգավորումներ -->
-                    <span class="fa-stack">
+                    <!-- <span class="fa-stack">
                         <a>
                             <span class="hexagon"></span>
                             <i class="fas fa-gear fa-stack-1x" title="Կարգավորումներ"></i>
                         </a>
+                    </span> -->
+                    <span class="fa-stack">
+                        <span class="dropleft">
+                            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" type="button" role="button">
+                                <span class="hexagon">
+                                    <i class="fas fa-gear fa-stack-1x" title="Կարգավորումներ"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/profile/edit">Կարգավորումներ</a>
+                                <a class="dropdown-item" href="#">logout</a>
+                            </div>
+                        </span>
                     </span>
                 </span>
 
