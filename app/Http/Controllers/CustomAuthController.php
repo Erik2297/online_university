@@ -155,4 +155,37 @@ class CustomAuthController extends Controller
         // return response()->json($data);
     }
 
+    public function EditUser(Request $request){
+        $validate = validator()->make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'surname' => 'required',
+                'email' => 'required|email',
+            ],
+            [
+                'required' => 'Դաշտը չի կարող դատարկ լինել',
+                'numeric' => 'Միայն թվեր',
+                'email' => 'Սխալ էլ․ հասցե',
+                'same' => 'Գաղտնաբառերը պետք է համապատասխանեն',
+            ],
+        );
+        if($validate->fails()){
+            return response()->json([
+                'status' => '200',
+                'errors' => $validate->errors()
+            ]);
+        }
+        else{
+            $user = Ustudent::find($request->input('id'));
+            $user->name = $request->input('name');
+            $user->surname = $request->input('surname');
+            $user->email = $request->input('email');
+            if($request->input('newPassword') && $request->input('newPassword') === $request->input('confirmPassword')){
+                $user->password = Hash::make($request->input('newPassword'));
+            }
+            $user->save();
+            return response()->json(Auth::user(), 200);
+        }
+    }
 }
