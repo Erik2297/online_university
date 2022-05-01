@@ -17,3 +17,4 @@ Route::post('/logout', [App\Http\Controllers\CustomAuthController::class,'Logout
 
 Route::get('/groupmembers/{id}', [App\Http\Controllers\MainController::class,'GroupMembers']);
 Route::get('/groupname/{id}', [App\Http\Controllers\MainController::class,'GroupName']);
+
