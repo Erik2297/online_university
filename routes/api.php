@@ -20,4 +20,6 @@ Route::get('/groupmembers/{id}', [App\Http\Controllers\MainController::class,'Gr
 Route::get('/groupname/{id}', [App\Http\Controllers\MainController::class,'GroupName']);
 
 Route::get('/lecturergroupget/{id}', [App\Http\Controllers\MainController::class,'LecturerGroups']);
+Route::get('/studentschedule', [App\Http\Controllers\MainController::class,'studentschedule']);
 
+Route::get('/studentget/{id}', [App\Http\Controllers\MainController::class,'studentget']);

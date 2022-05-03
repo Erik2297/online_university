@@ -32,8 +32,8 @@
                                     </div>
                                     <div class="product_details">
                                         <h5>
-                                            <a v-if="student.id == user.id" href="ec-product-detail.html"> Me </a>
-                                            <a v-else href="ec-product-detail.html">{{ student.name }} {{ student.surname }}</a>
+                                            <a v-if="student.id == user.id" :href="'/group/'+student.group_id+'/'+student.id"> Me </a>
+                                            <a v-else :href="'/group/'+student.group_id+'/'+student.id">{{ student.name }} {{ student.surname }}</a>
                                         </h5>
                                         <!-- <ul class="product_price list-unstyled">
                                             <li class="old_price">$16.00</li>

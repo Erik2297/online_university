@@ -41,6 +41,8 @@ import LecturerGroups from './components/LecturerGroups.vue'
 import LecturerSingleGroup from './components/LecturerSingleGroup.vue'
 import LecturerSchedule from './components/LecturerSchedule.vue'
 import LecturerAmbion from './components/LecturerAmbion.vue'
+import LecturerSingleStudent from './components/LecturerSingleStudent.vue'
+
 
 
 
@@ -63,6 +65,7 @@ const routes = [
     { path: '/lecturerprofile', component: LecturerProfile },
     { path: '/lecturergroups', component: LecturerGroups },
     { path: '/group/:id', component: LecturerSingleGroup },
+    { path: '/group/:id/:studentid', component: LecturerSingleStudent },
     { path: '/lecturerschedule', component: LecturerSchedule },
     { path: '/lecturerambion', component: LecturerAmbion },
 

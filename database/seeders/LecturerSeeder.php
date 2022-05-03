@@ -14,7 +14,7 @@ class LecturerSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i < 11; $i++){
+        for($i = 1; $i < 16; $i++){
             $gender_avatar = $i % 2 == 0 ? 'm' : 'w' ;
             $avatar = 'images/default_avatars/'.$gender_avatar.rand(1,4).'.png';
             Ulecturer::insert([

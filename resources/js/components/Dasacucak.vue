@@ -24,32 +24,38 @@
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-green padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16  xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
 
                         <td>
                             <span class="bg-yellow padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16  xs-font-size13">Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16  xs-font-size13">Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-purple padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16  xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-pink padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16  xs-font-size13">Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                     </tr>
 
@@ -59,6 +65,7 @@
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td class="bg-light-gray">
 
@@ -67,16 +74,19 @@
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td class="bg-light-gray">
 
@@ -89,31 +99,37 @@
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13"> Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13"> Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13"> Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13"> Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                     </tr>
 
@@ -126,16 +142,19 @@
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս. / Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td class="bg-light-gray">
 
@@ -144,6 +163,7 @@
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս. / Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                     </tr>
 
@@ -153,11 +173,13 @@
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13"> Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13"> Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td class="bg-light-gray">
 
@@ -166,16 +188,19 @@
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս. / Գործ.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                         <td>
                             <span class="bg-sky padding-5px-tb border-radius-5 margin-10px-bottom text-dark font-size16 xs-font-size13">Դաս.</span>
                             <div class="margin-10px-top font-size14">առարկայի անվանում</div>
                             <div class="font-size13 text-light-gray">Դասախոս</div>
+                            <div class="font-size13 ">Լսարան 2300</div>
                         </td>
                     </tr>
                 </tbody>
