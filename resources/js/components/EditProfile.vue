@@ -7,37 +7,37 @@
                 <div class="bounce3"></div>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-xl-8">
                 <div class="card mb-4">
-                    <div class="card-header">Account Details</div>
+                    <div class="card-header">Անձնական տվյալներ</div>
                     <div class="card-body">
                         <form :v-model="form"  @submit="onSubmit(form)">
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputFirstName">First name</label>
+                                    <label class="small mb-1" for="inputFirstName">Անուն</label>
                                     <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" v-model="form.name" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputLastName">Last name</label>
+                                    <label class="small mb-1" for="inputLastName">Ազգանուն</label>
                                     <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" v-model="form.surname" required>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                <label class="small mb-1" for="inputEmailAddress">Էլ․ հասցե</label>
                                 <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" v-model="form.email" required>
                             </div>
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="password">new password</label>
+                                    <label class="small mb-1" for="password">Նոր գաղտնաբառ</label>
                                     <input class="form-control" id="password" type="password" placeholder="Enter your new password" v-model="form.newPassword" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="confirmPassword">confirm password</label>
+                                    <label class="small mb-1" for="confirmPassword">Կրկնել գաղտնաբառը</label>
                                     <input class="form-control" id="confirmPassword" type="password" placeholder="Confirm your password" v-model="form.confirmPassword" required>
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="button" @click="onSubmit(form)">Save changes</button>
+                            <button class="btn btn-primary float-right" type="button" @click="onSubmit(form)">Պահպանել</button>
                         </form>
                     </div>
                 </div>

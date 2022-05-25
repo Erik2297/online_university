@@ -20,15 +20,15 @@
                         <a v-if="!lecturer" class="nav-link nav-links page-scroll" href="/profile">ՊՐՈՖԻԼ</a>
                         <a v-else class="nav-link nav-links page-scroll" href="/lecturerprofile">ՊՐՈՖԻԼ</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-links page-scroll" href="/forum">ՖՈՐՈՒՄ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-links page-scroll" href="/news">ՆՈՐՈՒԹՅՈՒՆՆԵՐ</a>
-                    </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link nav-links page-scroll" href="#projects">PROJECTS</a>
+                        <a class="nav-link nav-links page-scroll" href="/forum">ՖՈՐՈՒՄ</a>
                     </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link nav-links page-scroll" target="blank" href="https://nuaca.am/%d5%a3%d5%ab%d5%bf%d5%b8%d6%82%d5%a9%d5%b5%d5%b8%d6%82%d5%b6/%d5%b6%d5%b8%d6%80%d5%b8%d6%82%d5%a9%d5%b5%d5%b8%d6%82%d5%b6%d5%b6%d5%a5%d6%80">ՆՈՐՈՒԹՅՈՒՆՆԵՐ</a>
+                    </li>
+                    <li v-if="!logInOutIcons" class="nav-item">
+                        <a class="nav-link nav-links page-scroll" href="/meeting">ՕՆԼԱՅՆ ՄԻԹԻՆԳ</a>
+                    </li>
 
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link nav-links dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">DROPDOWN</a>

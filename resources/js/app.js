@@ -43,7 +43,8 @@ import LecturerSchedule from './components/LecturerSchedule.vue'
 import LecturerAmbion from './components/LecturerAmbion.vue'
 import LecturerSingleStudent from './components/LecturerSingleStudent.vue'
 
-
+// ALL ROUTES
+import Meeting from './components/Meeting.vue'
 
 
 
@@ -69,8 +70,8 @@ const routes = [
     { path: '/lecturerschedule', component: LecturerSchedule },
     { path: '/lecturerambion', component: LecturerAmbion },
 
-
-
+    // ALL ROUTES
+    { path: '/meeting', component: Meeting },
 
     // IF ROUTE DOES NOT EXISTS
     { path: '/404', component: NotFound },
