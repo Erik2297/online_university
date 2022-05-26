@@ -20,6 +20,8 @@ class CreateUstudentsTable extends Migration
             $table->dateTime('born');
             $table->string('gender');
             $table->string('email')->unique();
+            $table->string('facebook')->unique()->nullable();
+            $table->string('instagram')->unique()->nullable();
             $table->string('password');
             $table->string('avatar');
             $table->timestamp('email_verified_at')->nullable();

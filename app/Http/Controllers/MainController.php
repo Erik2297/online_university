@@ -45,5 +45,48 @@ class MainController extends Controller
         ]);
     }
 
+    public function EditUser(Request $request){
+        $validate = validator()->make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'surname' => 'required',
+                'email' => 'required|email',
+                'password' => 'required'
+            ],
+            [
+                'required' => 'Դաշտը չի կարող դատարկ լինել',
+                'numeric' => 'Միայն թվեր',
+                'email' => 'Սխալ էլ․ հասցե',
+                'same' => 'Գաղտնաբառերը պետք է համապատասխանեն',
+            ],
+        );
+        if($validate->fails()){
+            return response()->json([
+                'status' => '200',
+                'errors' => $validate->errors()
+            ]);
+        }
+        else{
+            $user = Ustudent::find($request->input('id'));
+            $user->name = $request->input('name');
+            $user->surname = $request->input('surname');
+            $user->email = $request->input('email');
+            if($request->input('newPassword') && $request->input('newPassword') === $request->input('confirmPassword') && !empty($request->input('newPassword')) && !empty($request->input('confirmPassword'))){
+                $user->password = Hash::make($request->input('newPassword'));
+            }
+            $user->save();
+            return response()->json($user, 200);
+        }
+    }
+
+    public function MOG($id){
+        $data = Uzachot::where('student_id', $id )->get(['mark']);
+        return response()->json([
+            'status' => 200,
+            'mog' => $data,
+        ]);
+    }
+
 
 }

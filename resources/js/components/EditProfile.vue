@@ -16,25 +16,25 @@
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">Անուն</label>
-                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" v-model="form.name" required>
+                                    <input class="form-control" id="inputFirstName" type="text"  v-model="form.name" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputLastName">Ազգանուն</label>
-                                    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" v-model="form.surname" required>
+                                    <input class="form-control" id="inputLastName" type="text" v-model="form.surname" required>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputEmailAddress">Էլ․ հասցե</label>
-                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" v-model="form.email" required>
+                                <input class="form-control" id="inputEmailAddress" type="email" v-model="form.email" required>
                             </div>
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="password">Նոր գաղտնաբառ</label>
-                                    <input class="form-control" id="password" type="password" placeholder="Enter your new password" v-model="form.newPassword" required>
+                                    <input class="form-control" id="password" type="text" v-model="form.newPassword" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="confirmPassword">Կրկնել գաղտնաբառը</label>
-                                    <input class="form-control" id="confirmPassword" type="password" placeholder="Confirm your password" v-model="form.confirmPassword" required>
+                                    <input class="form-control" id="confirmPassword" type="text" v-model="form.confirmPassword" required>
                                 </div>
                             </div>
                             <button class="btn btn-primary float-right" type="button" @click="onSubmit(form)">Պահպանել</button>
@@ -72,19 +72,37 @@ export default {
                     userData.newPassword !== userData.confirmPassword ||
                     userData.newPassword.length < 8 && userData.confirmPassword < 8
                 ) {
-                    return alert('error')
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ooops',
+                        text: 'Կան սխալներ, լրացրեք բոլոր դաշտերը !',
+                    })
                 }
             }
-            if(!userData.name || !userData.surname || !userData.email){
-                return alert('error')
+            else if(!userData.name || !userData.surname || !userData.email){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ooops',
+                    text: 'Կան սխալներ, լրացրեք բոլոր դաշտերը !',
+                })
             }
-            axios.post('/api/editUser', userData).then( (res) => {
-                this.form = res.data
-                this.user = this.form
-                delete localStorage.user
-                localStorage.user = JSON.stringify(res.data)
-                alert('success')
-            })
+            else{
+                axios.post('/api/editUser', userData).then( (res) => {
+                    this.form.name = res.data.name
+                    this.form.surname = res.data.surname
+                    this.form.email = res.data.email
+
+                    this.user = res.data
+                    delete localStorage.user
+                    localStorage.user = JSON.stringify(res.data)
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Շատ լավ',
+                        text: 'Անձնական տվյալները հաջողությամբ փոխվել են !',
+                    })
+                    console.log(this.user , this.form, res.data);
+                })
+            }
         }
     }
 }

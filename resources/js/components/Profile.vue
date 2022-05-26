@@ -12,39 +12,73 @@
     <!-- Begin .page-heading -->
             <div class="page-heading">
                 <div class="media clearfix align-items-center">
-                <div class="media-left pr30 user-image-section">
-                    <a href="#">
-                        <img class="media-object mw150" :src="user.avatar" alt="..." style="width:200px;">
-                    </a>
-                    <img v-if="user.role_in_group == 'leader'" :src="'/images/lead3.png'" width="60" class="lead-badge" title="Խմբի ավագ" alt="Խմբի ավագ">
-                </div>
-                <div class="media-body va-m pl-2">
-                    <h2 class="media-heading">
-                        {{ user.name }}
-                    </h2>
-                    <p class="lead">
-                        {{ user.surname }}
-                    </p>
-                    <div class="media-links w-25">
-                        <ul class="list-inline list-unstyled d-flex justify-content-start">
-                            <li class="ml-2 mr-2">
-                                <a href="#" title="facebook-link">
-                                    <i class="fab fa-facebook-square fs35 text-primary"></i>
-                                </a>
-                            </li>
-                            <li class="ml-2 mr-2">
-                                <a href="#" title="twitter-link">
-                                    <i class="fab fa-twitter-square fs35 text-info"></i>
-                                </a>
-                            </li>
-                            <li class="ml-2 mr-2">
-                                <a href="#" title="gmail-link link">
-                                    <img :src="'images/gmail.png'" width="38" height="35.56" style="margin-top: -1px" />
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="media-left pr30 user-image-section">
+                        <a href="#">
+                            <img class="media-object mw150" :src="user.avatar" alt="..." style="width:200px;">
+                        </a>
+                        <img v-if="user.role_in_group == 'leader'" :src="'/images/lead3.png'" width="60" class="lead-badge" title="Խմբի ավագ" alt="Խմբի ավագ">
                     </div>
-                </div>
+                    <div class="media-body va-m pl-2">
+                        <h2 class="media-heading">
+                            {{ user.name }}
+                        </h2>
+                        <p class="lead">
+                            {{ user.surname }}
+                        </p>
+                        <div class="media-links w-25">
+                            <ul class="list-inline list-unstyled d-flex justify-content-start">
+                                <li class="ml-2 mr-2 dropdown">
+                                    <i 
+                                        title="facebook-link"
+                                        class="fab fa-facebook-square fs35 text-primary"
+                                        type="button" 
+                                        id="dropdownMenuButton1" 
+                                        data-toggle="dropdown" 
+                                        aria-expanded="false"
+                                    >
+                                    </i>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <a class="dropdown-item" target="blank" :href="user.facebook">{{ user.facebook }}</a>
+                                    </div>
+                                </li>
+                                <li class="ml-2 mr-2 dropdown">
+                                    <i 
+                                        title="instagram-link"
+                                        class="fab fa-instagram-square fs35 text-purple"
+                                        type="button" 
+                                        id="dropdownMenuButton2" 
+                                        data-toggle="dropdown" 
+                                        aria-expanded="false"
+                                    >
+                                    </i>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <a class="dropdown-item" target="blank" :href="user.instagram">{{ user.instagram }}</a>
+                                    </div>
+                                </li>
+                                <li class="ml-2 mr-2 dropdown">
+                                    <img 
+                                        :src="'images/gmail-logo.png'" 
+                                        width="32" height="32" 
+                                        style="margin-left: -1px"
+                                        type="button" 
+                                        id="dropdownMenuButton3" 
+                                        data-toggle="dropdown" 
+                                        aria-expanded="false" 
+                                    />
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                        <a class="dropdown-item" @click="CopyEmail()"> {{ user.email }} </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-25 text-center">
+                        <h1> {{ this.mog }} </h1>
+                        <!-- <h1> 15 </h1>
+                        <h1> 15 </h1>
+                        <h1> 15 </h1> -->
+                        <h3> Իմ ՄՈԳ-ը </h3>
+                    </div>
                 </div>
             </div>
 
@@ -221,6 +255,7 @@ export default {
     data(){
         return{
             user: {},
+            mog: 0
         }
     },
     mounted(){
@@ -232,7 +267,15 @@ export default {
         axios.get('/api/userget').then( res =>  {
             this.user = res.data
             localStorage.user = JSON.stringify(res.data)
+            axios.get(`/api/usergetmog/${this.user.id}`).then( res =>  {
+                let mog = 0
+                res.data.mog.map(a => mog += a.mark)
+                this.mog = (mog / res.data.mog.length).toFixed(2) 
+                console.log(this.mog);
+            })
         })
+
+
     },
     computed: {
         ...mapState([
@@ -240,7 +283,14 @@ export default {
         ])
     },
     methods:{
-
+        CopyEmail(){
+            navigator.clipboard.writeText(this.user.email);
+            Swal.fire({
+                icon: 'info',
+                title: 'Great',
+                text: 'Էլ․ հասցեն պատճենված է !',
+            })
+        }
     }
 }
 </script>
