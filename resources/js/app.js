@@ -34,6 +34,7 @@ import News from './components/News.vue'
 import MyGroup from './components/MyGroup.vue'
 import EditProfile from './components/EditProfile.vue'
 import Zachot from './components/Zachot.vue'
+import Myfiles from './components/Myfiles.vue'
 
 // LECTURER COMPONENTS
 import LecturerProfile from './components/LecturerProfile.vue'
@@ -61,6 +62,7 @@ const routes = [
     { path: '/mygroup', component: MyGroup },
     { path: '/profile/edit', component: EditProfile },
     { path: '/zachot', component: Zachot },
+    { path: '/files', component: Myfiles },
 
     // LECTURER ROUTES
     { path: '/lecturerprofile', component: LecturerProfile },

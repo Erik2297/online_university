@@ -24,3 +24,5 @@ Route::get('/studentschedule',          [App\Http\Controllers\MainController::cl
 
 Route::get('/studentget/{id}',          [App\Http\Controllers\MainController::class,'studentget']);
 Route::get('/usergetmog/{id}',          [App\Http\Controllers\MainController::class,'MOG']);
+
+Route::post('/formSubmit/{data}',          [App\Http\Controllers\MainController::class,'formSubmit']);

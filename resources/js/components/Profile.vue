@@ -28,12 +28,12 @@
                         <div class="media-links w-25">
                             <ul class="list-inline list-unstyled d-flex justify-content-start">
                                 <li class="ml-2 mr-2 dropdown">
-                                    <i 
+                                    <i
                                         title="facebook-link"
                                         class="fab fa-facebook-square fs35 text-primary"
-                                        type="button" 
-                                        id="dropdownMenuButton1" 
-                                        data-toggle="dropdown" 
+                                        type="button"
+                                        id="dropdownMenuButton1"
+                                        data-toggle="dropdown"
                                         aria-expanded="false"
                                     >
                                     </i>
@@ -42,12 +42,12 @@
                                     </div>
                                 </li>
                                 <li class="ml-2 mr-2 dropdown">
-                                    <i 
+                                    <i
                                         title="instagram-link"
                                         class="fab fa-instagram-square fs35 text-purple"
-                                        type="button" 
-                                        id="dropdownMenuButton2" 
-                                        data-toggle="dropdown" 
+                                        type="button"
+                                        id="dropdownMenuButton2"
+                                        data-toggle="dropdown"
                                         aria-expanded="false"
                                     >
                                     </i>
@@ -56,14 +56,14 @@
                                     </div>
                                 </li>
                                 <li class="ml-2 mr-2 dropdown">
-                                    <img 
-                                        :src="'images/gmail-logo.png'" 
-                                        width="32" height="32" 
+                                    <img
+                                        :src="'images/gmail-logo.png'"
+                                        width="32" height="32"
                                         style="margin-left: -1px"
-                                        type="button" 
-                                        id="dropdownMenuButton3" 
-                                        data-toggle="dropdown" 
-                                        aria-expanded="false" 
+                                        type="button"
+                                        id="dropdownMenuButton3"
+                                        data-toggle="dropdown"
+                                        aria-expanded="false"
                                     />
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                                         <a class="dropdown-item" @click="CopyEmail()"> {{ user.email }} </a>
@@ -122,7 +122,9 @@
                             <td style="cursor:ponter">
                                 <i class="fas fa-file text-warning"></i>
                             </td>
-                            <td style="cursor:ponter">Իմ Ֆայլերը</td>
+                            <td style="cursor:ponter">
+                                <a class="text-dark" style="text-decoration: none;" href="/files">Իմ Ֆայլերը</a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -270,7 +272,7 @@ export default {
             axios.get(`/api/usergetmog/${this.user.id}`).then( res =>  {
                 let mog = 0
                 res.data.mog.map(a => mog += a.mark)
-                this.mog = (mog / res.data.mog.length).toFixed(2) 
+                this.mog = (mog / res.data.mog.length).toFixed(2)
                 console.log(this.mog);
             })
         })

@@ -24,9 +24,9 @@
                                             <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect">
                                                 <i class="fas fa-envelope"></i>
                                             </a>
-                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect">
+                                            <!-- <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect">
                                                 <i class="zmdi zmdi-shopping-cart"></i>
-                                            </a>
+                                            </a> -->
                                         </div>
                                         <img v-if="student.role_in_group == 'leader'" :src="'/images/lead3.png'" width="60" class="lead-badge" title="Խմբի ավագ" alt="Խմբի ավագ">
                                     </div>
